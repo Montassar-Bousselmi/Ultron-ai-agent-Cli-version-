@@ -1,0 +1,6 @@
+ollama
+pypdf
+python-docx
+ddgs
+duckduckgo_search
+httpx

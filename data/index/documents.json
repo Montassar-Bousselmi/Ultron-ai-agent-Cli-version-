@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "source": "sample_innovation.txt",
+      "file_name": "sample_innovation.txt",
+      "file_type": "txt",
+      "page": null,
+      "chunk": 0,
+      "text": "Innovation Assistant Sample Document The Innovation team is working on three priority initiatives: UX research automation, CX knowledge management, and ecosystem partner tracking. The UX initiative aims to reduce manual research preparation time. The CX initiative centralizes internal knowledge and meeting notes. The ecosystem initiative tracks partner activities and follow-up actions."
+    }
+  ]
+}
