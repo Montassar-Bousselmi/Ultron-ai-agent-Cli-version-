@@ -25,17 +25,16 @@ available_tools = {
     "list_dir": list_dir,
     "search_documents": search_documents,
     "execute_python_code": execute_python_code,
-    "web_search": web_search
 }
 
 messages = [
     {
         "role": "system",
-        "content": """You are an internal Innovation team AI assistant.
+        "content": """You are an internal Innovation team AI assistant powered by RAG (Retrieval-Augmented Generation).
 
 RULES:
 1. Use search_documents whenever the user asks about information that may exist in internal documents.
-2. The document search is a simple keyword search. Do not claim it is semantic search or RAG.
+2. search_documents uses semantic RAG via sentence-transformers + FAISS. Results are ranked by cosine similarity to the query.
 3. Do not invent facts. If the document search does not provide enough evidence, say so.
 4. When answering from document search, preserve source labels exactly, e.g. [SOURCE 1].
 5. At the end of a document-based answer, add a short 'Sources' section listing the source labels and locations used.
@@ -75,7 +74,7 @@ def agent_chat(user_input: str) -> str:
     for step in range(max_steps):
         print(f"\n--- [Step {step + 1}/{max_steps}] Agent is working... ---")
         response = ollama.chat(
-            model="gemma4:cloud",
+            model="gemma4:latest",
             messages=messages,
             tools=[
                 read_file,
@@ -85,7 +84,6 @@ def agent_chat(user_input: str) -> str:
                 list_dir,
                 search_documents,
                 execute_python_code,
-                web_search
             ],
         )
 

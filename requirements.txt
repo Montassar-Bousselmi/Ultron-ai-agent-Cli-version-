@@ -4,3 +4,7 @@ python-docx
 ddgs
 duckduckgo_search
 httpx
+# RAG dependencies
+sentence-transformers
+faiss-cpu
+numpy
